@@ -1,0 +1,23 @@
+{
+    "name": "grocery_payment",
+    "short_name": "grocery_payment",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "Grocery App in Flutter with Payment Gateway (GPay, Apple Pay, UPI, Credit/Debit Card)",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
