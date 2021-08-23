@@ -34,7 +34,7 @@ class DeliveryCard extends StatelessWidget {
           children: <Widget>[
             // SizedBox(height: response.setHeight(13)),
             Text(
-              "Delivary",
+              "Delivery",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -42,7 +42,7 @@ class DeliveryCard extends StatelessWidget {
             ),
             SizedBox(height: response.setHeight(15)),
             Text(
-              "All orders of \$40 or more\nqualify for FREE deleivary.",
+              "All orders of \₹99 or more\nqualify for FREE Delivery.",
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: response.setFontSize(11),
@@ -51,9 +51,9 @@ class DeliveryCard extends StatelessWidget {
             SizedBox(height: response.setHeight(12)),
             StepProgressIndicator(
               fallbackLength: 140,
-              totalSteps: 40,
+              totalSteps: 99,
               currentStep:
-                  totalPriceProvider <= 40 ? totalPriceProvider.round() : 40,
+                  totalPriceProvider <= 99 ? totalPriceProvider.round() : 99,
               size: 4,
               padding: 0,
               selectedColor: Colors.yellow,
@@ -63,7 +63,7 @@ class DeliveryCard extends StatelessWidget {
         ),
         Spacer(),
         Text(
-          "\$$totalPriceProvider",
+          "\₹$totalPriceProvider",
           style: TextStyle(
             color: Colors.white70,
             fontSize: response.setFontSize(15),

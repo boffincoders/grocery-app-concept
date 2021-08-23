@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_payment/models/product.dart';
 import 'package:grocery_payment/provider/product_provider.dart';
 import 'package:grocery_payment/screens/checkout_screen.dart';
+import 'package:grocery_payment/screens/payment/payment_options.dart';
 import 'package:grocery_payment/utils/app_theme.dart';
 import 'package:grocery_payment/widgets/Illustraion_container.dart';
 import 'package:grocery_payment/widgets/checkout_card.dart';
@@ -29,7 +30,7 @@ class ProductsCheckout extends StatelessWidget {
   Widget build(BuildContext context) {
     var finalTotalCost = totalPriceProvider == 0
         ? 0
-        : (totalPriceProvider > 40
+        : (totalPriceProvider > 99
             ? totalPriceProvider
             : totalPriceProvider + 5);
     var cartProductsProvider = Provider.of<ProductsController>(context).cart;
@@ -38,7 +39,7 @@ class ProductsCheckout extends StatelessWidget {
       fit: StackFit.loose,
       children: <Widget>[
         Positioned(
-          top: -cartCheckoutTransitionValue ,
+          top: -cartCheckoutTransitionValue,
           left: 0,
           child: Text(
             "Cart",
@@ -104,7 +105,7 @@ class ProductsCheckout extends StatelessWidget {
                       ),
                       Spacer(),
                       Text(
-                        "\$${finalTotalCost..toStringAsExponential(3)}",
+                        "\₹${finalTotalCost..toStringAsExponential(3)}",
                         style: TextStyle(
                           color: Colors.white.withAlpha(240),
                           fontWeight: FontWeight.bold,
@@ -127,8 +128,18 @@ class ProductsCheckout extends StatelessWidget {
 
   Widget _buildNextButton(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (context) => CheckOut())),
+      onTap: () {
+        /*Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CheckOut()));*/
+
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => PaymentOptions(
+                    totalPrice: totalPriceProvider < 99
+                        ? totalPriceProvider + 5
+                        : totalPriceProvider)));
+      },
       child: Container(
         height: response.setHeight(55),
         decoration: BoxDecoration(
@@ -139,7 +150,7 @@ class ProductsCheckout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "Place Order",
+                "Next", //Place Order
                 style: TextStyle(
                   fontSize: response.setFontSize(16),
                   fontWeight: FontWeight.w700,

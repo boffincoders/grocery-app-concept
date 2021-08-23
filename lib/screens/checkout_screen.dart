@@ -81,7 +81,6 @@ class _CheckOutState extends State<CheckOut> with AfterLayoutMixin<CheckOut> {
             ),
           ),
         ),
-        // btnOk: _buildFancyButtonOk,
         onDissmissCallback: (DismissType type) {
           Provider.of<ProductsController>(context, listen: false).clearCart();
           Navigator.pop(context);

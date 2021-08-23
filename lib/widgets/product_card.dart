@@ -10,7 +10,9 @@ import 'details_page_transition.dart';
 
 class ProductCard extends StatelessWidget {
   ProductCard({@required this.index});
+
   final int? index;
+
   @override
   Widget build(BuildContext context) {
     var producInfoProvider =

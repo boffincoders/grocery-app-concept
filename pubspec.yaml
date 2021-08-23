@@ -42,6 +42,11 @@ dependencies:
     git:
       url: https://github.com/acyment/FlutterSwipeGestureRecognizer.git
   lottie: ^1.1.0
+  flutter_credit_card: ^2.0.0
+  flutter_stripe: ^1.2.0
+  http: ^0.13.3
+  #pay: ^1.0.5
+  dio: ^4.0.0
 
 flutter_icons:
   android: "ic_launcher"

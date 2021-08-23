@@ -7,42 +7,42 @@ class ProductsController extends ChangeNotifier {
     Product(
         name: 'Red Delicious Apple',
         picPath: 'assets/apple.png',
-        price: '\$16.20',
+        price: '\₹16.20',
         weight: '500g'),
     Product(
         name: 'Totapuri Mango',
         picPath: 'assets/mango.png',
-        price: '\$11.55',
+        price: '\₹11.55',
         weight: '700g'),
     Product(
         name: 'Manzano Banana',
         picPath: 'assets/banana.png',
-        price: '\$9.90',
+        price: '\₹9.90',
         weight: '500g'),
     Product(
         name: 'Broccoli',
         picPath: 'assets/broccoli.png',
-        price: '\$6.99',
+        price: '\₹6.99',
         weight: '1000g'),
     Product(
         name: 'Coca-Cola',
         picPath: 'assets/coke.png',
-        price: '\$2.99',
+        price: '\₹2.99',
         weight: '550g'),
     Product(
         name: 'Cereals',
         picPath: 'assets/cereals.png',
-        price: '\$24.75',
+        price: '\₹24.75',
         weight: '1000g'),
     Product(
         name: 'Organic Flour',
         picPath: 'assets/flour.png',
-        price: '\$12.95',
+        price: '\₹12.95',
         weight: '250g'),
     Product(
         name: 'Pure Milk',
         picPath: 'assets/milk.png',
-        price: '\$17.25',
+        price: '\₹17.25',
         weight: '500g'),
   ];
 
@@ -98,7 +98,7 @@ class ProductsController extends ChangeNotifier {
     if (_totalCost == 0) {
       for (int i = 0; i < _shoppingCart.length; i++) {
         _totalCost +=
-            (double.parse(_shoppingCart[i].price.replaceAll('\$', '')) *
+            (double.parse(_shoppingCart[i].price.replaceAll('\₹', '')) *
                 _shoppingCart[i].orderedQuantity);
       }
       notifyListeners();
@@ -106,7 +106,7 @@ class ProductsController extends ChangeNotifier {
       _totalCost = 0.0;
       for (int i = 0; i < _shoppingCart.length; i++) {
         _totalCost +=
-            (double.parse(_shoppingCart[i].price.replaceAll('\$', '')) *
+            (double.parse(_shoppingCart[i].price.replaceAll('\₹', '')) *
                 _shoppingCart[i].orderedQuantity);
       }
       notifyListeners();

@@ -14,7 +14,7 @@ class Checkout extends StatelessWidget {
   final int index;
   String _cost() {
     double totalCost =
-        double.parse(cartProductsProvider[index].price.replaceAll('\$', '')) *
+        double.parse(cartProductsProvider[index].price.replaceAll('\₹', '')) *
             cartProductsProvider[index].orderedQuantity;
     return totalCost.toStringAsFixed(2);
   }
@@ -58,7 +58,7 @@ class Checkout extends StatelessWidget {
             ),
             Spacer(),
             Text(
-              "\$" + _cost(),
+              "\₹" + _cost(),
               textAlign: TextAlign.start,
               style: TextStyle(
                 color: Colors.white70,
