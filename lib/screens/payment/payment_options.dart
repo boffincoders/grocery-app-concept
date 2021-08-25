@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:grocery_payment/screens/payment/card_payment.dart';
+import 'package:grocery_payment/screens/payment/upi_payment.dart';
 import 'package:grocery_payment/utils/app_theme.dart';
 
 class PaymentOptions extends StatefulWidget {
@@ -196,6 +197,12 @@ class _PaymentOptionsState extends State<PaymentOptions> {
                         MaterialPageRoute(
                             builder: (context) =>
                                 CardPayment(widget.totalPrice)));
+                  } else if (payWith == PayWith.UPI) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                UPIPayment(widget.totalPrice)));
                   } else {
                     await _buildAlertDialog(context);
                   }
